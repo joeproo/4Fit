@@ -17,7 +17,7 @@ import javax.swing.border.Border;
  *
  * @author youef
  */
-public class LoginPage extends javax.swing.JFrame {
+public final class LoginPage extends javax.swing.JFrame {
 
     
     /**
@@ -75,7 +75,7 @@ public class LoginPage extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 36)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jButton1.setForeground(new java.awt.Color(48, 48, 48));
         jButton1.setText("Sing in");
         jButton1.setActionCommand("Sign_in");
@@ -92,7 +92,7 @@ public class LoginPage extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 36)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
         jButton2.setForeground(new java.awt.Color(48, 48, 48));
         jButton2.setText("Sing up");
         jButton2.setActionCommand("Sign_in");
@@ -116,7 +116,7 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(LoginBcgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         LoginBcgLayout.setVerticalGroup(
             LoginBcgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +129,7 @@ public class LoginPage extends javax.swing.JFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(LoginBcgLayout.createSequentialGroup()
-                        .addGap(0, 66, Short.MAX_VALUE)
+                        .addContainerGap(53, Short.MAX_VALUE)
                         .addGroup(LoginBcgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -206,6 +206,6 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public void setIconImage() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("4FIT.png")));
-        
+       
     }
 }
