@@ -150,7 +150,9 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+            UserFrame2 UF2 = new UserFrame2();
+            UF2.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
@@ -199,7 +201,10 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-    private void setIconImage() {
+    /**
+     *
+     */
+    public void setIconImage() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("4FIT.png")));
         
     }
