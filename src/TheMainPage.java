@@ -529,15 +529,35 @@ public class TheMainPage extends javax.swing.JFrame {
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/4_fit", "root", "root");
+            PreparedStatement stmt = connection.prepareCall("delete from users where user_id = ?");
+            String id = jtxtId.getText();
+            stmt.setString(1, id);
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(this, "done ");
+            jButton1ActionPerformed(evt);
+            NameTF.setText("");
+            HightTF.setText("");
+            jtxtage.setText("");
+            jtxthours.setText("");
+            GenderTF.setText("");
+            jtxtwalked.setText("");
+            WeightTF.setText("");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(TheMainPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
 
         try {
-
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/4_fit", "root", "root");
             PreparedStatement stmt = connection.prepareCall("update users set user_name=?,user_lenght=?,user_age=?,sleep_hours=?, user_gender=?,walked_dis=?,user_weight=? where user_id=? ");
-            
+
             String id = jtxtId.getText();
             String name = NameTF.getText();
             String hieght = HightTF.getText();
@@ -546,9 +566,6 @@ public class TheMainPage extends javax.swing.JFrame {
             String gender = GenderTF.getText();
             String walked = jtxtwalked.getText();
             String weight = WeightTF.getText();
-            
-            
-            
 
             stmt.setString(1, name);
             stmt.setString(2, hieght);
@@ -558,13 +575,12 @@ public class TheMainPage extends javax.swing.JFrame {
             stmt.setString(6, walked);
             stmt.setString(7, weight);
             stmt.setString(8, id);
-            
-            
+
             stmt.executeUpdate();
-            
+
             JOptionPane.showMessageDialog(this, " Edit success ");
             jButton1ActionPerformed(evt);
-            
+
             NameTF.setText("");
             HightTF.setText("");
             jtxtage.setText("");
@@ -572,8 +588,7 @@ public class TheMainPage extends javax.swing.JFrame {
             GenderTF.setText("");
             jtxtwalked.setText("");
             WeightTF.setText("");
-           
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(TheMainPage.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -676,7 +691,6 @@ public class TheMainPage extends javax.swing.JFrame {
         String gender = jUsersTable.getValueAt(row_num, 5).toString();
         String walked_dis = jUsersTable.getValueAt(row_num, 6).toString();
         String weight = jUsersTable.getValueAt(row_num, 7).toString();
-
 
         NameTF.setText(name);
         HightTF.setText(lenght);
